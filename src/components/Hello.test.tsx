@@ -22,3 +22,9 @@ it('throws when the enthusiasm level is negative', () => {
         enzyme.shallow(<Hello name='Spencer' enthusiasmLevel={-1} />);
     }).toThrow();
 });
+
+// it('should call increment when the button is pressed', () => {
+// });
+
+// it('should call decrement when the button is pressed', () => {
+// });

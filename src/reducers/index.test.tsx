@@ -1,5 +1,5 @@
-import {enthusiasm} from "./index";
 import {decrementEnthusiasm, incrementEnthusiasm} from "../actions/index";
+import {enthusiasm} from "./index";
 
 it('should increment enthusiasm', () => {
     const updatedState = enthusiasm({languageName: '', enthusiasmLevel: 0}, incrementEnthusiasm() );

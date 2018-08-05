@@ -5,6 +5,8 @@ import '../style/Hello.css'
 export interface IHelloProps {
     name: string;
     enthusiasmLevel?: number;
+    onIncrement?: () => void;
+    onDecrement?: () => void;
 }
 
 interface IHelloState {
@@ -26,20 +28,20 @@ class Hello extends React.Component<IHelloProps, IHelloState> {
         return (
             <div className="hello">
                 <h1 className="greeting">
-                    Hello {name + getExclamationMarks(this.state.currentEnthusiasm)}
+                    Hello {name + getExclamationMarks(this.props.enthusiasmLevel || 1)}
                 </h1>
-                <button onClick={this.onDecrement}>-</button>
-                <button onClick={this.onIncrement}>+</button>
+                <button onClick={this.props.onDecrement}>-</button>
+                <button onClick={this.props.onIncrement}>+</button>
             </div>
         );
     }
 
-    private onIncrement = () => this.updateEnthusiasm(this.state.currentEnthusiasm + 1);
-    private onDecrement = () => this.updateEnthusiasm(this.state.currentEnthusiasm - 1);
+    // private onIncrement = () => this.updateEnthusiasm(this.state.currentEnthusiasm + 1);
+    // private onDecrement = () => this.updateEnthusiasm(this.state.currentEnthusiasm - 1);
 
-    private updateEnthusiasm(currentEnthusiasm: number) {
-        this.setState({currentEnthusiasm});
-    }
+    // private updateEnthusiasm(currentEnthusiasm: number) {
+    //     this.setState({currentEnthusiasm});
+    // }
 }
 
 export default Hello;
