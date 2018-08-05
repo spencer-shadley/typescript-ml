@@ -10,3 +10,6 @@ Setting up a template to use the following:
  * Keras
  * AWS S3
  * AWS DynamoDB
+ * react-router
+ * react-router-redux
+ * redux-actions
