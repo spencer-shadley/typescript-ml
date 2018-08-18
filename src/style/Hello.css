@@ -1,9 +1,15 @@
 .hello {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 2fr 1fr;
     background-color: #eee;
     color: #444;
+}
+
+button {
+    background-color: #222;
+    color: #eee;
+    font-size: 2em;
 }
 
 .greeting {
