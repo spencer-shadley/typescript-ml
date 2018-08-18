@@ -3,11 +3,15 @@ import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { EnthusiasmAction} from './actions/index';
-import Enthusiasm from './containers/Enthusiasm';
+// import Enthusiasm from './containers/Enthusiasm';
 import './index.css';
 import { enthusiasm} from './reducers/index';
 import registerServiceWorker from './registerServiceWorker';
 import { IStoreState} from './types/index';
+
+import ReactTemplate from "./ReactTemplate";
+
+import { BrowserRouter } from 'react-router-dom';
 
 const store = createStore<IStoreState, EnthusiasmAction, any, any>(enthusiasm, {
     enthusiasmLevel: 1,
@@ -16,7 +20,9 @@ const store = createStore<IStoreState, EnthusiasmAction, any, any>(enthusiasm, {
 
 ReactDOM.render(
     <Provider store={store}>
-        <Enthusiasm/>
+        <BrowserRouter>
+            <ReactTemplate />
+        </BrowserRouter>
     </Provider>,
     document.getElementById('root') as HTMLElement
 );
