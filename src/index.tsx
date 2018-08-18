@@ -3,7 +3,7 @@ import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import { EnthusiasmAction} from './actions/index';
-import Hello from './containers/Hello';
+import Enthusiasm from './containers/Enthusiasm';
 import './index.css';
 import { enthusiasm} from './reducers/index';
 import registerServiceWorker from './registerServiceWorker';
@@ -16,7 +16,7 @@ const store = createStore<IStoreState, EnthusiasmAction, any, any>(enthusiasm, {
 
 ReactDOM.render(
     <Provider store={store}>
-        <Hello/>
+        <Enthusiasm/>
     </Provider>,
     document.getElementById('root') as HTMLElement
 );

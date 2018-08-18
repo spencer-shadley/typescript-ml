@@ -1,6 +1,6 @@
 import * as actions from '../actions';
 
-import Hello from '../components/Hello';
+import Enthusiasm from '../components/Enthusiasm';
 
 import { connect } from 'react-redux';
 import { Dispatch } from 'redux';
@@ -20,4 +20,4 @@ export function mapDispatchToProps(dispatch: Dispatch<actions.EnthusiasmAction>)
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Hello);
+export default connect(mapStateToProps, mapDispatchToProps)(Enthusiasm);

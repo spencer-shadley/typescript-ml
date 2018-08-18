@@ -1,20 +1,20 @@
 import * as React from 'react'
 
-import '../style/Hello.css'
+import '../style/Enthusiasm.css'
 
-export interface IHelloProps {
+export interface IEnthusiasmProps {
     name: string;
     enthusiasmLevel?: number;
     onIncrement?: () => void;
     onDecrement?: () => void;
 }
 
-interface IHelloState {
+interface IEnthusiasmState {
     currentEnthusiasm: number;
 }
 
-class Hello extends React.Component<IHelloProps, IHelloState> {
-    constructor(props: IHelloProps) {
+class Enthusiasm extends React.Component<IEnthusiasmProps, IEnthusiasmState> {
+    constructor(props: IEnthusiasmProps) {
         super(props);
         this.state = { currentEnthusiasm: props.enthusiasmLevel || 1 };
     }
@@ -26,25 +26,18 @@ class Hello extends React.Component<IHelloProps, IHelloState> {
             throw new Error('Whomp whomp...');
         }
         return (
-            <div className="hello">
+            <div className="enthusiasm">
                 <h1 className="greeting">
-                    Hello {name + getExclamationMarks(this.props.enthusiasmLevel || 1)}
+                    Enthusiasm {name + getExclamationMarks(this.props.enthusiasmLevel || 1)}
                 </h1>
                 <button onClick={this.props.onDecrement}>-</button>
                 <button onClick={this.props.onIncrement}>+</button>
             </div>
         );
     }
-
-    // private onIncrement = () => this.updateEnthusiasm(this.state.currentEnthusiasm + 1);
-    // private onDecrement = () => this.updateEnthusiasm(this.state.currentEnthusiasm - 1);
-
-    // private updateEnthusiasm(currentEnthusiasm: number) {
-    //     this.setState({currentEnthusiasm});
-    // }
 }
 
-export default Hello;
+export default Enthusiasm;
 
 function getExclamationMarks(numChars: number) {
     return Array(numChars + 1).join('!');
