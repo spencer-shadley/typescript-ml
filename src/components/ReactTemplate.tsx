@@ -1,7 +1,7 @@
 import * as React from 'react';
-import './ReactTemplate.css';
+import '../style/ReactTemplate.css';
 
-import logo from './logo.svg';
+import logo from '../logo.svg';
 
 class ReactTemplate extends React.Component {
   public render() {
